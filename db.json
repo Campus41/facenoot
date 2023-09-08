@@ -3,50 +3,52 @@
     {
       "id": 1,
       "name": "John Doe",
-      "email": "john.doe@example.com",
-      "posts": [
-        {
-          "id": 101,
-          "title": "First Post",
-          "body": "This is the first post by John Doe."
-        },
-        {
-          "id": 102,
-          "title": "Second Post",
-          "body": "This is the second post by John Doe."
-        }
-      ],
-      "photos": [
-        {
-          "id": 201,
-          "title": "Profile Photo",
-          "url": "https://example.com/johndoe/profile.jpg"
-        },
-        {
-          "id": 202,
-          "title": "Vacation Photo",
-          "url": "https://example.com/johndoe/vacation.jpg"
-        }
-      ]
+      "email": "john.doe@example.com"
     },
     {
       "id": 2,
       "name": "Jane Smith",
-      "email": "jane.smith@example.com",
-      "posts": [
-        {
-          "id": 103,
-          "title": "Traveling Adventures",
-          "body": "Exploring new places with Jane Smith."
-        }
-      ],
-      "photos": [
-        {
-          "id": 203,
-          "title": "Profile Photo",
-          "url": "https://example.com/janesmith/profile.jpg"
-        }
-      ]
+      "email": "jane.smith@example.com"
+    }
+  ],
+  "posts": [
+    {
+      "userId": 1,
+      "id": 101,
+      "title": "First Post",
+      "body": "This is the first post by John Doe."
+    },
+    {
+      "userId": 1,
+      "id": 102,
+      "title": "Second Post",
+      "body": "This is the second post by John Doe."
+    },
+    {
+      "userId": 2,
+      "id": 103,
+      "title": "Traveling Adventures",
+      "body": "Exploring new places with Jane Smith."
+    }
+  ],
+  "photos": [
+    {
+      "userId": 1,
+      "id": 201,
+      "title": "Profile Photo",
+      "url": "https://example.com/johndoe/profile.jpg"
+    },
+    {
+      "userId": 1,
+      "id": 202,
+      "title": "Vacation Photo",
+      "url": "https://example.com/johndoe/vacation.jpg"
+    },
+    {
+      "userId": 2,
+      "id": 203,
+      "title": "Profile Photo",
+      "url": "https://example.com/janesmith/profile.jpg"
     }
   ]
 }
