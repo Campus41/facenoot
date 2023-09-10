@@ -29,6 +29,18 @@
       "id": 103,
       "title": "Traveling Adventures",
       "body": "Exploring new places with Jane Smith."
+    },
+    {
+      "userId": 2,
+      "id": 89,
+      "title": "Traveling Adventures",
+      "body": "Exploring new places with Jane Smith."
+    },
+    {
+      "userId": 2,
+      "id": 213,
+      "title": "Traveling Adventures",
+      "body": "Exploring new places with Jane Smith."
     }
   ],
   "albums": [
@@ -47,6 +59,12 @@
     {
       "userId": 2,
       "id": 203,
+      "title": "Profile Photo",
+      "url": "https://example.com/janesmith/profile.jpg"
+    },    
+    {
+      "userId": 2,
+      "id": 205,
       "title": "Profile Photo",
       "url": "https://example.com/janesmith/profile.jpg"
     }
