@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/facenoot/static/css/main.5ab28782.css",
+    "main.js": "/facenoot/static/js/main.703d35c4.js",
+    "index.html": "/facenoot/index.html",
+    "main.5ab28782.css.map": "/facenoot/static/css/main.5ab28782.css.map",
+    "main.703d35c4.js.map": "/facenoot/static/js/main.703d35c4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5ab28782.css",
+    "static/js/main.703d35c4.js"
+  ]
+}
