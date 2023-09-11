@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import { getUsers } from '../api/index'
-import { useNavigate } from 'react-router-dom';
+import { getUsers } from '../../api/index'
+import { useNavigate, useLocation } from 'react-router-dom';
 import { debounce } from 'lodash';
 
 const UsersList = () => {
@@ -10,17 +10,24 @@ const UsersList = () => {
   const [sortType, setSortType] = useState('asc');
 
   const navigate = useNavigate();
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const allParams = {};
+
+  for (const [key, value] of queryParams.entries()) {
+    allParams[key] = value;
+  }
+
+  const fetchData = async () => {
+    setIsLoading(true);
+    const res = await getUsers(allParams);
+    setUsers(res);
+    setIsLoading(false);
+  };
 
   useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true)
-      const res = await getUsers(searchTerm, sortType);
-      setUsers(res);
-      setIsLoading(false);
-    };
-
-    fetchData(); 
-  }, [searchTerm, sortType])
+    fetchData();
+  }, []);
 
   const handleUserClick = (userId) => {
     navigate(`/users/${userId}`);
@@ -31,7 +38,12 @@ const UsersList = () => {
 
     const fetchData = async () => {
       setIsLoading(true)
-      const res = await getUsers(searchTerm, sortType);
+      allParams.sort = sortType
+      queryParams.set('sort', sortType);
+      const queryString = queryParams.toString();
+    
+      navigate(`?${queryString}`);
+      const res = await getUsers(allParams);
       setUsers(res);
       setIsLoading(false);
     };
@@ -43,7 +55,12 @@ const UsersList = () => {
 
     const fetchData = async () => {
       setIsLoading(true)
-      const res = await getUsers(term);
+      allParams.name = term
+      queryParams.set('name', term);
+      const queryString = queryParams.toString();
+    
+      navigate(`?${queryString}`);
+      const res = await getUsers(allParams);
       setUsers(res);
       setIsLoading(false);
     };

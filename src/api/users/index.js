@@ -1,9 +1,22 @@
-const getUsers = async (name = "", sort="") => {
+const getUsers = async ({...params}) => {
   let users = [];
 
-  try {
-    const usersJson = await fetch(`https://my-json-server.typicode.com/Campus41/facenoot/users?name_like=${name}&_sort=name&_order=${sort}`);
+  let url = 'https://my-json-server.typicode.com/Campus41/facenoot/users';
+
+  if (params.name) {
+    url += `?name_like=${params.name}`;
+  }
+
+  if (params.sort) {
+    if (params.name) {
+      url += `&_sort=name&_order=${params.sort}`;
+    } else {
+      url += `?_sort=name&_order=${params.sort}`;
+    }
+  }
   
+  try {
+    const usersJson = await fetch(url); 
     if (!usersJson.ok) {
       throw new Error(`HTTP error! Status: ${usersJson.status}`);
     }

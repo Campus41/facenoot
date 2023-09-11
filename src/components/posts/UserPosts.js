@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getPosts, getPost } from "../api";
+import { getPosts, getPost } from "../../api";
 import { useParams, useNavigate } from 'react-router-dom';
 
 const UserPosts = () => {

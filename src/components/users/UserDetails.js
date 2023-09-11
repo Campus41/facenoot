@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { getUser } from '../api';
+import { getUser } from '../../api';
 
 const UserDetails = () => {
   const navigate = useNavigate();

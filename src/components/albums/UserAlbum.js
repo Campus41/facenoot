@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getAlbum } from "../api";
+import { getAlbum } from "../../api";
 
 const UserAlbum = () => {
   const { userId, albumId } = useParams();
